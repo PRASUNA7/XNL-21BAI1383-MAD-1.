@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class AuthProvider with ChangeNotifier {
+  bool _isLoggedIn = false;
+  bool get isLoggedIn => _isLoggedIn;
+
+  void login() {
+    _isLoggedIn = true;
+    notifyListeners();
+  }
+}
+
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AuthProvider(),
+      child: MaterialApp(home: LoginScreen()),
+    ),
+  );
+}
