@@ -1,0 +1,10 @@
+import 'package:http/http.dart' as http;
+
+Future<void> fetchUserData() async {
+  final response = await 
+  if (response.statusCode == 200) {
+    print('User Data: ${response.body}');
+  } else {
+    throw Exception('Failed to load user data');
+  }
+}
